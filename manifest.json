@@ -1,0 +1,23 @@
+{
+
+    "manifest_version": 2,
+    "name": "Rex-AdBlocker",
+    "version": "1.0",
+    "description" : "A simple Ad blocker",
+    "icons": {
+        "16": "images/16.png",
+        "48": "images/48.png",
+        "128": "images/128.png"
+    },
+    "background":{
+        "scripts":["index.js"]
+    },
+    "permissions":["webRequest","webRequestBlocking","<all_urls>"],
+    
+    "browser_action": {
+        "default_icon": "images/48.png",
+        "default_popup": "index.html"
+
+    }
+
+}
