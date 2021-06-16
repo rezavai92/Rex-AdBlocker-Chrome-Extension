@@ -1,7 +1,7 @@
 {
 
     "manifest_version": 2,
-    "name": "Rex-AdBlocker",
+    "name": "Adphobic-AdBlocker",
     "version": "1.0",
     "description" : "A simple Ad blocker",
     "icons": {
@@ -10,13 +10,14 @@
         "128": "images/128.png"
     },
     "background":{
-        "scripts":["index.js"]
+        "scripts":[  "background.js"]
     },
     "permissions":["webRequest","webRequestBlocking","<all_urls>"],
     
     "browser_action": {
         "default_icon": "images/48.png",
-        "default_popup": "index.html"
+        "default_popup" : "index.html"
+        
 
     }
 

@@ -1,23 +1,38 @@
-const callback = (detail) => {
-  return {
-    cancel: true,
-  };
-};
+domReady(()=>{
 
-const filter = {
-  urls: [
-    
-    "*://partner.googleadservices.com/*",
-    "*://*.adbrite.com/*",
-    "*://*.doubleclick.net/*",
-    "*://*.exponential.com/*",
-    "*://*.quantserve.com/*",
-    "*://*.scorecardresearch.com/*",
-    "*://*.zedo.com/*",
-    "*://*.googlesyndication.com/*",
-    "*://*.google-analytics.com/*",
-    "*://creative.ak.fbcdn.net/*",
-  ],
-};
+    const checkbox=document.getElementById("checkbox-ad")
 
-chrome.webRequest.onBeforeRequest.addListener(callback, filter, ["blocking"]);
+    checkbox.checked = localStorage.getItem("checked")==="true";
+
+
+
+
+    checkbox.addEventListener("change",()=>{
+
+
+        if(checkbox.checked){
+            localStorage.setItem("checked","true")
+        }
+        else{
+            localStorage.removeItem("checked")
+        }
+    },false)
+})
+
+
+
+function domReady(callback){
+
+    if(document.readyState==="complete"){
+
+        callback()
+    }
+    else{
+
+        window.addEventListener("load",()=>{
+
+            callback()
+
+        } ,false )
+    }
+}
